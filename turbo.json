@@ -1,12 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalEnv": ["HOST", "OPENAI_API_KEY", "PORT"],
+  "globalEnv": ["HOST", "OPENAI_API_KEY", "PORT", "WXT_API_BASE_URL"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["build/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["build/**", ".next/**", "!.next/cache/**", ".output/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]

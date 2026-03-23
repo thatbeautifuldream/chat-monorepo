@@ -1,0 +1,13 @@
+{
+  "extends": "@workspace/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@workspace/ui/*": ["../../packages/ui/src/*"]
+    },
+    "types": ["chrome"]
+  },
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".wxt/types/**/*.ts"],
+  "exclude": ["node_modules", ".output"]
+}

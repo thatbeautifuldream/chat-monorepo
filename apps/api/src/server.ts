@@ -49,6 +49,8 @@ function logServerReady() {
 function applyCorsHeaders(request: Request, response: Response) {
   const requestOrigin = request.headers.origin
   const allowAnyOrigin = allowedOrigins.includes("*")
+  const requestsPrivateNetworkAccess =
+    request.headers["access-control-request-private-network"] === "true"
 
   response.setHeader(
     "Access-Control-Allow-Headers",
@@ -56,7 +58,17 @@ function applyCorsHeaders(request: Request, response: Response) {
   )
   response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
 
+  if (requestsPrivateNetworkAccess) {
+    response.setHeader("Access-Control-Allow-Private-Network", "true")
+  }
+
   if (allowAnyOrigin) {
+    if (requestOrigin) {
+      response.setHeader("Access-Control-Allow-Origin", requestOrigin)
+      response.setHeader("Vary", "Origin")
+      return
+    }
+
     response.setHeader("Access-Control-Allow-Origin", "*")
     return
   }
