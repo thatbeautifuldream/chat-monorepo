@@ -27,6 +27,6 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**", ".next/**", "**/.turbo/**", "**/coverage/**"],
+    ignores: ["build/**", "dist/**", ".next/**", "**/.turbo/**", "**/coverage/**"],
   },
 ]
