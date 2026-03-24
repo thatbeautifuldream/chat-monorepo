@@ -2,6 +2,8 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 
 import "@workspace/ui/globals.css"
+import "katex/dist/katex.min.css"
+import "streamdown/styles.css"
 import { App } from "./App.js"
 
 const rootElement = document.getElementById("root")

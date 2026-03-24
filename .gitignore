@@ -35,3 +35,6 @@ npm-debug.log*
 # Misc
 .DS_Store
 *.pem
+
+# opensrc - source code for packages
+opensrc/

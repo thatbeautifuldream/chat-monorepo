@@ -10,7 +10,7 @@ export default defineConfig({
   manifest: {
     name: "Chat Extension",
     description: "Side panel extension for the chat monorepo backend.",
-    permissions: ["sidePanel"],
+    permissions: ["activeTab", "sidePanel", "scripting", "tabs"],
     host_permissions: ["http://*/*", "https://*/*"],
     action: {
       default_title: "Open Chat Extension",
